@@ -1,7 +1,7 @@
 module.exports = {
     client: 'pg',
     debug: true,
-    connection: DB_URL,
+    connection: DATABASE_URL,
     migrations: {
         tableName: 'migrations'
     },
