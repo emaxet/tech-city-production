@@ -1,3 +1,6 @@
+const ENV = process.env.ENV || "development";
+
+
 const express      = require('express');
 const app          = express();
 const path         = require('path');
@@ -5,7 +8,7 @@ const favicon      = require('serve-favicon');
 const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const knexConfig   = require('../knexfile');
-const knex         = require('knex')('production');
+const knex         = require('knex')(knexConfig[ENV]);
 const passport     = require('passport');
 const session      = require('express-session');
 const bodyParser   = require('body-parser');
@@ -42,7 +45,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // MIDDLEWARE
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(cookieParser());
 
@@ -73,7 +76,6 @@ app.use('*', apiAuth());
 
 // MOUNT API ROUTES (AUTH REQUIRED)
 
-app.use('/', index);
 app.use('/api/v1', events(knex));
 app.use('/api/v1', jobs(knex));
 app.use('/api/v1', cities(knex));

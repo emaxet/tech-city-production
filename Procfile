@@ -1,1 +1,1 @@
-web: npm run knex && npm start
+web: npm start
