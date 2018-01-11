@@ -1,2 +1,1 @@
-server: npm run knex
-web: npm start
+web: npm run knex && npm start

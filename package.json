@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "knex": "./node_modules/.bin/knex",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm run server",
     "server": "node server/app.js",
     "client": "cd client && npm start"
   },
