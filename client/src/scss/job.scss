@@ -1,0 +1,38 @@
+.job-box {
+  margin: 2em;
+  overflow: hidden;
+
+  .job-title {
+    color: red;
+  }
+
+  button{
+    margin: 10px auto;
+  }
+
+  .job-body {
+    p {
+      margin: 0
+    }
+  }
+
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  .buttonGroup {
+    margin-bottom: 25px;
+  }
+  .jobList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .eventItem {
+      margin: 10px;
+    }
+  }
+}
+
+ 
