@@ -69,10 +69,9 @@ app.use('/api/v1', eventsNoAuth(knex));
 app.use('/api/v1', jobsNoAuth(knex));
 app.use('/api/v1', chatsNoAuth(knex));
 
-
 // API AUTHENTICATION MIDDLEWARE
 
-app.use('*', apiAuth());
+// app.use('*', apiAuth());
 
 // MOUNT API ROUTES (AUTH REQUIRED)
 
@@ -84,7 +83,6 @@ app.use('/api/v1', chats(knex));
 app.get('/*', function (req, res) {
    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
  });
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
