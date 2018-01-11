@@ -61,12 +61,6 @@
     "validator": "^9.2.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/scss -o src/css",
-    "watch-css": "npm run build-css && node-sass-chokidar src/scss -o src/css --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "node server/app.js",
-    "build": "npm run build-css && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "node server/app.js"
   },
 }
